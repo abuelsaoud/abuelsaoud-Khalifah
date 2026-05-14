@@ -1,0 +1,8 @@
+{
+  "name": "المستر",
+  "description": "A professional AI-powered English tutor application for Arabic speakers, featuring grammar engines, speech interaction, and smart assessments.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": []
+}
