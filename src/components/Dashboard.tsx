@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, BookOpen, User, Trophy, Play, ChevronRight, Star, Flame } from 'lucide-react';
+import { MessageCircle, BookOpen, User, Trophy, Play, ChevronRight, Star, Flame, Bot, Sparkles } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { ChatView } from './ChatView';
 import { LessonsView } from './LessonsView';
@@ -15,7 +15,7 @@ export function Dashboard() {
         <div>
           <div className="flex items-center gap-4 mb-12 px-2">
             <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
-              <span className="text-white font-bold text-xl">T</span>
+              <Bot className="text-white" size={28} />
             </div>
             <div>
               <h1 className="font-display font-light tracking-wide text-xl text-white">المستر</h1>
@@ -96,15 +96,27 @@ function MobileNavItem({ icon, active, onClick }: { icon: React.ReactNode, activ
 function HomeView({ onNavigate }: { onNavigate: (view: 'home' | 'chat' | 'lessons' | 'progress') => void }) {
   return (
     <div className="p-8 md:p-12 max-w-6xl mx-auto pb-24">
-      <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-        <div>
-          <p className="text-indigo-600 font-semibold tracking-widest text-xs uppercase mb-2">Welcome Back • مرحباً بك</p>
-          <h1 className="text-5xl font-display font-light text-[#0A192F]">Good morning, <span className="font-bold">Omar.</span></h1>
+      <header className="flex flex-col items-center justify-center text-center mb-16 mt-4">
+        <div className="relative mb-6 inline-block">
+          <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 text-indigo-500 animate-pulse">
+            <Sparkles size={48} />
+          </div>
+          <h1 className="text-7xl md:text-9xl font-black text-[#0A192F] tracking-tighter flex items-center justify-center gap-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            <span className="text-indigo-600 hidden md:block"><Bot size={80} strokeWidth={2.5}/></span>
+            المستر
+          </h1>
+          <div className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-4 md:h-6 bg-indigo-500/20 rounded-full -z-10 transform -rotate-1"></div>
         </div>
-        <div className="flex gap-4">
+        <p className="text-indigo-600 font-bold tracking-widest text-xs md:text-sm uppercase mb-6 flex items-center gap-2">
+            <Sparkles size={16} />
+            British English AI Tutor
+            <Sparkles size={16} />
+        </p>
+        
+        <div className="flex flex-wrap justify-center gap-4 mt-2">
           <div className="bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3">
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span className="text-sm font-medium">B1 Intermediate</span>
+            <span className="text-sm font-medium text-[#0A192F]">B1 Intermediate</span>
           </div>
           <div className="bg-indigo-600 px-6 py-3 rounded-2xl shadow-lg shadow-indigo-200 flex items-center gap-3 text-white">
             <span className="text-sm font-bold">2,450 XP</span>
